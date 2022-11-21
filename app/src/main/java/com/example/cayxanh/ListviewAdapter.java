@@ -20,8 +20,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -74,7 +78,7 @@ public class ListviewAdapter extends RecyclerView.Adapter<ListviewAdapter.MyView
                 alertDiaLog.setPositiveButton("Co", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        databaseReference.child("art").child(databaseReference.getRef().getKey()).setValue(null);
+
                         Toast.makeText(context, "Delate Success..", Toast.LENGTH_SHORT).show();
 
                     }
